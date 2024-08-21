@@ -65,7 +65,7 @@ document.getElementById('productInput').addEventListener('keypress', (e) => {
 
 
 
-/*
+
 //! SEARCHING ELEMENT
 document.getElementById('searchBtn').addEventListener('click', () => {
     console.log('search button clicked');
@@ -113,7 +113,6 @@ document.getElementById('productSearch').addEventListener('keypress', (e) => {
         });
     }
 });
-*/
 
 //! SEARCHING ELEMENT ON KEYUP
 document.getElementById('productSearch').addEventListener('keyup', (e) => {
@@ -158,5 +157,9 @@ document.getElementById('productSearch').addEventListener('keyup', (e) => {
 document.getElementById('productItems').addEventListener('click', (e) => {
     if(e.target.id === 'deleteBtn'){
         e.target.parentElement.remove();
+        //animation
+        e.target.parentElement.style.animation = 'fadeout 1s';
     }
+
+
 });
