@@ -85,19 +85,31 @@ button{
         background-color: rgb(255, 0, 0, 0.5);
     }
 }
-@keyframes identifier {
-    from {
-        transform: scale(1);
+@keyframes delete {
+    from{
+        transform:translateX(0%);
     }
-    to {
-        transform: scale(0);
+    to{
+        transform:translateX(200%);
     }
 }
 .delete{
-    animation: identifier 0.55s; 
+    animation: delete 0.55s; 
     transform: blur(0.5px);
 }
 
+
+@keyframes show {
+    from{
+        transform:translateX(-200%);
+    }
+    to{
+        transform:translateX(0%);
+    }
+}
+.show{
+    animation: show 0.5s;
+}
 
 @media (max-width: 500px){
     .adding, .searching{

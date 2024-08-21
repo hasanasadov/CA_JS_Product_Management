@@ -1,4 +1,3 @@
-
 //! ADDING ELEMENT
 document.getElementById('addBtn').addEventListener('click', () => {
     console.log('add button clicked');
@@ -20,6 +19,8 @@ document.getElementById('addBtn').addEventListener('click', () => {
     if(isOkay){
         const productItems = document.getElementById('productItems');
         const newLi = document.createElement('li');
+        newLi.classList.add('show');
+
         newLi.innerHTML = `
             <span>${productInput}</span>
             <button id="deleteBtn">Delete</button>
@@ -56,12 +57,11 @@ document.getElementById('productInput').addEventListener('keypress', (e) => {
                 <button id="deleteBtn">Delete</button>
             `;
             productItems.appendChild(newLi);
+            newLi.classList.add('show');
             document.getElementById('productInput').value = '';  
         }
     }
 });
-
-
 
 
 
@@ -157,6 +157,8 @@ document.getElementById('productSearch').addEventListener('keyup', (e) => {
 document.getElementById('productItems').addEventListener('click', (e) => {
     if(e.target.id === 'deleteBtn'){
         e.target.parentElement.classList.add('delete');
+        e.target.parentElement.classList.remove('show');
+
         setTimeout(() => {
             e.target.parentElement.remove();
         },500);
