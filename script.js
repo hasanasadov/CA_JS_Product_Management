@@ -156,10 +156,10 @@ document.getElementById('productSearch').addEventListener('keyup', (e) => {
 //! DELETING ELEMENT
 document.getElementById('productItems').addEventListener('click', (e) => {
     if(e.target.id === 'deleteBtn'){
-        e.target.parentElement.remove();
-        //animation
-        e.target.parentElement.style.animation = 'fadeout 1s';
+        e.target.parentElement.classList.add('delete');
+        setTimeout(() => {
+            e.target.parentElement.remove();
+        },500);
     }
-
 
 });
